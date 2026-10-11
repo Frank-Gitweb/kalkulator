@@ -1,0 +1,107 @@
+/* Farger samlet på ett sted – prøv å endre dem! */
+:root {
+  --bakgrunn: #1e1f24;
+  --kalkulator: #2a2c33;
+  --knapp: #3a3d46;
+  --knapp-hover: #4a4e59;
+  --funksjon: #5a5e6b;
+  --operator: #f29d38;
+  --operator-hover: #f5b05c;
+  --tekst: #ffffff;
+  --tekst-dempet: #a0a4b0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bakgrunn);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 16px;
+}
+
+.kalkulator {
+  width: 100%;
+  max-width: 340px;
+  background: var(--kalkulator);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.skjerm {
+  text-align: right;
+  padding: 16px 8px 20px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.regnestykke {
+  color: var(--tekst-dempet);
+  font-size: 1.1rem;
+  min-height: 1.5rem;
+}
+
+.visning {
+  color: var(--tekst);
+  font-size: 2.8rem;
+  font-weight: 300;
+  word-break: break-all;
+}
+
+.knapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.knapp {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  background: var(--knapp);
+  color: var(--tekst);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.knapp:hover { background: var(--knapp-hover); }
+.knapp:active { transform: scale(0.95); }
+
+.funksjon { background: var(--funksjon); }
+
+.operator,
+.lik {
+  background: var(--operator);
+}
+
+.operator:hover,
+.lik:hover {
+  background: var(--operator-hover);
+}
+
+/* Markerer valgt regneart */
+.operator.aktiv {
+  background: var(--tekst);
+  color: var(--operator);
+}
+
+/* 0-knappen er dobbelt så bred */
+.null {
+  grid-column: span 2;
+  aspect-ratio: auto;
+  border-radius: 40px;
+  text-align: left;
+  padding-left: 28px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="kalkulator">
+    <!-- Skjermen: øverste linje viser regnestykket, nederste viser tallet -->
+    <div class="skjerm">
+      <div id="regnestykke" class="regnestykke"></div>
+      <div id="visning" class="visning">0</div>
+    </div>
+
+    <!-- Knappene. data-tall og data-operator brukes av script.js -->
+    <div class="knapper">
+      <button class="knapp funksjon" id="tom">C</button>
+      <button class="knapp funksjon" id="slett">⌫</button>
+      <button class="knapp funksjon" id="prosent">%</button>
+      <button class="knapp operator" data-operator="/">÷</button>
+
+      <button class="knapp" data-tall="7">7</button>
+      <button class="knapp" data-tall="8">8</button>
+      <button class="knapp" data-tall="9">9</button>
+      <button class="knapp operator" data-operator="*">×</button>
+
+      <button class="knapp" data-tall="4">4</button>
+      <button class="knapp" data-tall="5">5</button>
+      <button class="knapp" data-tall="6">6</button>
+      <button class="knapp operator" data-operator="-">−</button>
+
+      <button class="knapp" data-tall="1">1</button>
+      <button class="knapp" data-tall="2">2</button>
+      <button class="knapp" data-tall="3">3</button>
+      <button class="knapp operator" data-operator="+">+</button>
+
+      <button class="knapp null" data-tall="0">0</button>
+      <button class="knapp" id="komma">,</button>
+      <button class="knapp lik" id="lik">=</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
